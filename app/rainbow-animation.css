@@ -1,0 +1,38 @@
+@keyframes rainbow-border-animation {
+  0% {
+    border-image: linear-gradient(to right, #ffd700, #00c853, #0066ff, #ff3d00, #ff9100) 1;
+  }
+  20% {
+    border-image: linear-gradient(to right, #ff9100, #ffd700, #00c853, #0066ff, #ff3d00) 1;
+  }
+  40% {
+    border-image: linear-gradient(to right, #ff3d00, #ff9100, #ffd700, #00c853, #0066ff) 1;
+  }
+  60% {
+    border-image: linear-gradient(to right, #0066ff, #ff3d00, #ff9100, #ffd700, #00c853) 1;
+  }
+  80% {
+    border-image: linear-gradient(to right, #00c853, #0066ff, #ff3d00, #ff9100, #ffd700) 1;
+  }
+  100% {
+    border-image: linear-gradient(to right, #ffd700, #00c853, #0066ff, #ff3d00, #ff9100) 1;
+  }
+}
+
+.rainbow-border-animated {
+  border-width: 2px;
+  border-style: solid;
+  animation: rainbow-border-animation 10s linear infinite;
+}
+
+.rainbow-border-t-animated {
+  border-top-width: 2px;
+  border-top-style: solid;
+  animation: rainbow-border-animation 10s linear infinite;
+}
+
+.rainbow-border-b-animated {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  animation: rainbow-border-animation 10s linear infinite;
+}

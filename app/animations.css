@@ -1,0 +1,99 @@
+/* Dancing text animation */
+.dancing-text {
+  display: inline-block;
+  animation: dance 2s ease-in-out infinite;
+}
+
+.dancing-text span {
+  display: inline-block;
+  transform-origin: bottom center;
+}
+
+.dancing-text span:nth-child(odd) {
+  animation: dance-odd 2s ease-in-out infinite;
+}
+
+.dancing-text span:nth-child(even) {
+  animation: dance-even 2s ease-in-out infinite;
+}
+
+@keyframes dance-odd {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(3deg);
+  }
+}
+
+@keyframes dance-even {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px) rotate(3deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+}
+
+/* Auto-hiding text animation */
+.auto-hide-text {
+  animation: fade-out 8s forwards;
+  opacity: 1;
+}
+
+@keyframes fade-out {
+  0%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Color-changing background words */
+.color-changing-bg-text {
+  position: relative;
+  z-index: 1;
+}
+
+.color-changing-bg-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+  font-size: 150%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: color-change 10s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: var(--primary);
+  }
+  25% {
+    color: #ff6b6b;
+  }
+  50% {
+    color: #48dbfb;
+  }
+  75% {
+    color: #1dd1a1;
+  }
+  100% {
+    color: var(--primary);
+  }
+}

@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./animations.css";
+@import "./rainbow-animation.css";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Multi-colored border utility classes */
+  .rainbow-border {
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #ffd700, #00c853, #0066ff, #ff3d00, #ff9100) 1;
+  }
+
+  .rainbow-border-t {
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-image: linear-gradient(to right, #ffd700, #00c853, #0066ff, #ff3d00, #ff9100) 1;
+  }
+
+  .rainbow-border-b {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, #ffd700, #00c853, #0066ff, #ff3d00, #ff9100) 1;
+  }
+
+  .rainbow-border-l {
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-image: linear-gradient(to bottom, #ffd700, #00c853, #0066ff, #ff3d00, #ff9100) 1;
+  }
+
+  .rainbow-border-r {
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-image: linear-gradient(to bottom, #ffd700, #00c853, #0066ff, #ff3d00, #ff9100) 1;
+  }
+}
+
+@layer base {
+  :root {
+    /* Blue background for light mode */
+    --background: 210 70% 95%;
+    --foreground: 210 50% 10%;
+
+    --card: 210 50% 98%;
+    --card-foreground: 210 50% 10%;
+
+    --popover: 210 50% 98%;
+    --popover-foreground: 210 50% 10%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 10% 98%;
+
+    --secondary: 210 30% 90%;
+    --secondary-foreground: 210 50% 10%;
+
+    --muted: 210 30% 92%;
+    --muted-foreground: 210 20% 40%;
+
+    --accent: 210 30% 90%;
+    --accent-foreground: 210 50% 10%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 10% 98%;
+
+    /* We'll keep these for components that don't use the rainbow border */
+    --border: 142 70% 45%;
+    --input: 142 70% 45%;
+    --ring: 142 70% 45%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark green background for dark mode */
+    --background: 142 30% 15%;
+    --foreground: 142 10% 98%;
+
+    --card: 142 30% 20%;
+    --card-foreground: 142 10% 98%;
+
+    --popover: 142 30% 20%;
+    --popover-foreground: 142 10% 98%;
+
+    --primary: 142 70% 50%;
+    --primary-foreground: 142 10% 98%;
+
+    --secondary: 142 30% 30%;
+    --secondary-foreground: 142 10% 98%;
+
+    --muted: 142 20% 25%;
+    --muted-foreground: 142 20% 70%;
+
+    --accent: 142 30% 35%;
+    --accent-foreground: 142 10% 98%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 142 10% 98%;
+
+    /* We'll keep these for components that don't use the rainbow border */
+    --border: 142 70% 50%;
+    --input: 142 70% 50%;
+    --ring: 142 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
